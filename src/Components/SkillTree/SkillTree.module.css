@@ -1,0 +1,9 @@
+.skillTreeContainer {
+  background: url(https://minecraft.capta.co/Images/Background.jpg) #d3d3d3 50% /
+    cover;
+  width: 100%;
+  height: 400px;
+  box-shadow:
+    -5px -5px 4px #00000080 inset,
+    5px 5px 5px #00000080 inset;
+}
