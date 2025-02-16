@@ -27,10 +27,6 @@
   transition: opacity 0.2s;
 }
 
-.skillNode:hover::before {
-  opacity: 1;
-}
-
 .skillIcon {
   width: 100%;
   height: 100%;
