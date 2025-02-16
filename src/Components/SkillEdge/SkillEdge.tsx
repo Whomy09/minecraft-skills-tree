@@ -1,19 +1,14 @@
-import { BaseEdge, EdgeProps, getStraightPath } from "@xyflow/react";
+import { BaseEdge, EdgeProps } from "@xyflow/react";
 
-function SkillEdge({
+const SkillEdge = ({
   sourceX,
   sourceY,
   targetX,
   targetY,
   id,
   style = {},
-}: EdgeProps) {
-  const [edgePath] = getStraightPath({
-    sourceX,
-    sourceY,
-    targetX,
-    targetY,
-  });
+}: EdgeProps) => {
+  const edgePath = `M${sourceX},${sourceY} H${(sourceX + targetX) / 2} V${targetY} H${targetX}`;
 
   return (
     <>
@@ -22,13 +17,21 @@ function SkillEdge({
         path={edgePath}
         style={{
           ...style,
-          strokeWidth: 6,
+          strokeWidth: 12,
+          stroke: "#000",
+        }}
+      />
+      <BaseEdge
+        id={id}
+        path={edgePath}
+        style={{
+          ...style,
+          strokeWidth: 4,
           stroke: "#ffffff",
-          strokeOpacity: 0.75,
         }}
       />
     </>
   );
-}
+};
 
 export default SkillEdge;

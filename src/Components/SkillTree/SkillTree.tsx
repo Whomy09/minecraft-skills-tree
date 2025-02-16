@@ -94,6 +94,7 @@ function SkillTree() {
         panOnDrag={false}
         zoomOnPinch={false}
         panOnScroll={false}
+        zoomOnDoubleClick={false}
         fitView
       ></ReactFlow>
     </div>

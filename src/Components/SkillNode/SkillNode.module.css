@@ -1,18 +1,20 @@
 .skillNode {
-  position: relative;
   width: 80px;
   height: 80px;
   padding: 10px;
   background-color: #c6c6c6;
   cursor: default;
-  border: 2px solid #242424;
+  border: 5px solid #222;
   box-shadow:
-    inset -2px -2px 0 #555555,
-    inset 2px 2px 0 #ffffff;
+    inset -5px -5px 0 #555555,
+    inset 5px 5px 0 #ffffff;
 }
 
 .skillCompleted {
   background-color: rgb(172, 124, 12);
+  box-shadow:
+    inset -5px -5px 0 #555555,
+    inset 5px 5px 0 #ffffff56;
 }
 
 .skillNode::before {
@@ -42,20 +44,33 @@
   margin-top: 5px;
   width: 250px;
   border: 2px solid #404040;
-  background-color: #100010;
+  background-color: #232023;
   border-radius: 10px;
   z-index: 10;
 }
 
+.skillCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 0 5px #ffffff4f;
+  z-index: 2;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
 .skillTitle {
-  background-color: #2185d0;
-  padding: 10px;
+  background-color: #1a6fb0;
+  padding: 15px;
   color: white;
   font-size: 28px;
 }
 
 .skillDescription {
-  padding: 10px;
+  padding: 15px;
   color: #00ff40;
   letter-spacing: 0.1em;
   font-size: 28px;

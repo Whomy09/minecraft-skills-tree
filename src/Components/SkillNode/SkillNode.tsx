@@ -20,11 +20,6 @@ function SkillNode({ data, id }: SkillNodeProps) {
 
   return (
     <>
-      <Handle
-        type="target"
-        position={Position.Left}
-        style={{ opacity: 0 }}
-      />
       <div
         className={`${styles.skillNode} ${skill.isAvailable && !skill.isCompleted && "cursor-pointer"} ${skill.isCompleted && styles.skillCompleted} aaaa`}
         onMouseEnter={() => setHover(true)}
@@ -39,11 +34,8 @@ function SkillNode({ data, id }: SkillNodeProps) {
           </div>
         )}
       </div>
-      <Handle
-        type="source"
-        position={Position.Right}
-        style={{ opacity: 0 }}
-      />
+      <Handle type="target" position={Position.Left} style={{ opacity: 0, width: 2, height: 2 }} />
+      <Handle type="source" position={Position.Right} style={{ opacity: 0, width: 2, height: 2 }} />
     </>
   );
 }
