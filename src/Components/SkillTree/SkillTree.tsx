@@ -34,8 +34,6 @@ function SkillTree() {
       rankdir: "LR",
       nodesep: 100,
       ranksep: 50,
-      edgesep: 40,
-      ranker: "network-simplex",
     });
 
     skillNodes.forEach((node) => {

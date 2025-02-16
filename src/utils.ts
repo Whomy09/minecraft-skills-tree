@@ -41,6 +41,8 @@ export function normalizeSkillTree(
       source: parentId,
       target: id,
       type: "skillEdge",
+      selected: false,
+      selectable: false,
     });
     skillsCompleted[parentId].childrenIds.push(id);
   }

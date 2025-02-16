@@ -20,9 +20,13 @@ function SkillNode({ data, id }: SkillNodeProps) {
 
   return (
     <>
-      <Handle type="target" position={Position.Left} />
+      <Handle
+        type="target"
+        position={Position.Left}
+        style={{ opacity: 0 }}
+      />
       <div
-        className={`${styles.skillNode} ${skill.isAvailable && !skill.isCompleted && "cursor-pointer"} ${skill.isCompleted && styles.skillCompleted}`}
+        className={`${styles.skillNode} ${skill.isAvailable && !skill.isCompleted && "cursor-pointer"} ${skill.isCompleted && styles.skillCompleted} aaaa`}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         onClick={() => dispatch(Actions.completeSkill(id))}
@@ -35,7 +39,11 @@ function SkillNode({ data, id }: SkillNodeProps) {
           </div>
         )}
       </div>
-      <Handle type="source" position={Position.Right} />
+      <Handle
+        type="source"
+        position={Position.Right}
+        style={{ opacity: 0 }}
+      />
     </>
   );
 }

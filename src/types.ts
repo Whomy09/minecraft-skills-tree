@@ -25,6 +25,8 @@ export interface SkillEdge {
   source: string;
   target: string;
   type: string;
+  selected: boolean;
+  selectable: boolean;
 }
 
 export type SkillsCompleted = Record<
