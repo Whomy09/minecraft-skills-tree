@@ -1,10 +1,14 @@
-@import url('https://fonts.cdnfonts.com/css/minecraftia');
+@import url("https://fonts.cdnfonts.com/css/minecraftia");
 
 body {
-    margin: 0;
-    font-size: 16px;
-    min-height: 100vh;
-    background-color: #979797;
-    color: #fff;
-    font-family: 'Minecraftia', sans-serif;
+  margin: 0;
+  font-size: 16px;
+  min-height: 100vh;
+  background-color: #979797;
+  color: #fff;
+  font-family: "Minecraftia", sans-serif;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
 }

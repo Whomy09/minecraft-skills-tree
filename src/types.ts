@@ -12,13 +12,12 @@ export interface SkillNode {
     description: string;
     image: string;
     parentId: string | null;
-    completed: boolean;
   };
   type: string;
   position: {
     x: number;
     y: number;
-  }
+  };
 }
 
 export interface SkillEdge {
@@ -27,3 +26,8 @@ export interface SkillEdge {
   target: string;
   type: string;
 }
+
+export type SkillsCompleted = Record<
+  string,
+  { isCompleted: boolean; isAvailable: boolean; childrenIds: string[] }
+>;

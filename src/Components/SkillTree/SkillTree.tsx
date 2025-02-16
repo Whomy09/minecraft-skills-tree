@@ -66,13 +66,15 @@ function SkillTree() {
 
         if (!baseSkillTree) return;
 
-        const { skillEdges, skillNodes } = normalizeSkillTree(baseSkillTree);
+        const { skillEdges, skillNodes, skillsCompleted } =
+          normalizeSkillTree(baseSkillTree);
 
         const { calculateSkillNodes } = getLayoutElements(
           skillNodes,
           skillEdges
         );
 
+        dispatch(Actions.setSkillsCompleted(skillsCompleted));
         dispatch(Actions.setSkillNodes(calculateSkillNodes));
         dispatch(Actions.setSkillEdges(skillEdges));
       } catch (error) {

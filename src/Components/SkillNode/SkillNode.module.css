@@ -2,13 +2,17 @@
   position: relative;
   width: 80px;
   height: 80px;
-  cursor: pointer;
   padding: 10px;
   background-color: #c6c6c6;
+  cursor: default;
   border: 2px solid #242424;
   box-shadow:
     inset -2px -2px 0 #555555,
     inset 2px 2px 0 #ffffff;
+}
+
+.skillCompleted {
+  background-color: rgb(172, 124, 12);
 }
 
 .skillNode::before {
@@ -63,4 +67,3 @@
   line-height: 1.4;
   text-shadow: 1px 1px #000000;
 }
-
