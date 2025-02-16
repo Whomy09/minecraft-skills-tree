@@ -2,7 +2,7 @@ import Dagre from "@dagrejs/dagre";
 import { Actions } from "../../slice";
 import { RootState } from "../../store";
 import { ReactFlow } from "@xyflow/react";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import SkillEdge from "../SkillEdge/SkillEdge";
 import SkillNode from "../SkillNode/SkillNode";
 import { normalizeSkillTree } from "../../utils";
@@ -15,6 +15,7 @@ import {
 
 import "@xyflow/react/dist/style.css";
 import styles from "./SkillTree.module.css";
+import SkillCard from "../SkillCard/SkillCard";
 
 const edgesTypes = {
   skillEdge: SkillEdge,
@@ -24,6 +25,8 @@ function SkillTree() {
   const dispatch = useDispatch();
   const nodeTypes = useMemo(() => ({ skillNode: SkillNode }), []);
   const { skillEdges, skillNodes } = useSelector((state: RootState) => state);
+  const [skillNode, setSkillNode] = useState<SkillNodeType | null>(null);
+  const [skillCardPosition, setSkillCardPosition] = useState({ x: 0, y: 0 });
 
   function getLayoutElements(
     skillNodes: SkillNodeType[],
@@ -55,6 +58,27 @@ function SkillTree() {
         };
       }),
     };
+  }
+
+  function handleElementHover(
+    event: React.MouseEvent,
+    skillNode: SkillNodeType
+  ) {
+    const target = (event.target as HTMLDivElement).closest(
+      ".react-flow__node"
+    );
+
+    if (!target) return;
+
+    const { x, y } = target.getBoundingClientRect();
+
+    setSkillNode(skillNode);
+    setSkillCardPosition({ x, y });
+  }
+
+  function handleElementLeave() {
+    setSkillCardPosition({ x: 0, y: 0 });
+    setSkillNode(null);
   }
 
   useEffect(() => {
@@ -95,8 +119,13 @@ function SkillTree() {
         zoomOnPinch={false}
         panOnScroll={false}
         zoomOnDoubleClick={false}
+        elevateNodesOnSelect={false}
         fitView
-      ></ReactFlow>
+        onNodeMouseEnter={(e, node) => handleElementHover(e, node)}
+        onNodeMouseLeave={handleElementLeave}
+      >
+        <SkillCard skillNode={skillNode} position={skillCardPosition} />
+      </ReactFlow>
     </div>
   );
 }

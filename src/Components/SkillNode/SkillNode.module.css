@@ -1,4 +1,4 @@
-.skillNode {
+.skillNode { 
   width: 65px;
   height: 65px;
   padding: 10px;
@@ -17,61 +17,9 @@
     inset 5px 5px 0 #ffffff56;
 }
 
-.skillNode::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-
 .skillIcon {
   width: 100%;
   height: 100%;
   object-fit: contain;
   image-rendering: pixelated;
-}
-
-.skillCard {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 5px;
-  width: 250px;
-  border: 2px solid #404040;
-  background-color: #232023;
-  border-radius: 10px;
-  z-index: 10;
-}
-
-.skillCard::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  box-shadow: inset 0 0 0 5px #ffffff4f;
-  z-index: 2;
-  border-radius: 10px;
-  pointer-events: none;
-}
-
-.skillTitle {
-  background-color: #1a6fb0;
-  padding: 15px;
-  color: white;
-  font-size: 28px;
-}
-
-.skillDescription {
-  padding: 15px;
-  color: #00ff40;
-  letter-spacing: 0.1em;
-  font-size: 28px;
 }
